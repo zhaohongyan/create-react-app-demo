@@ -12,14 +12,22 @@ code {
     monospace;
 }
 
+.nav_list {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
 .nav {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 20px;
   text-decoration: none;
   color: #333;
   font-size: 24px;
 }
 
-.nav.active {
+.active {
   color: pink;
+}
+
+ul {
+  list-style: none;
 }
