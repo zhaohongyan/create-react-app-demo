@@ -9,7 +9,6 @@ export default class Demo1 extends React.Component {
   }
 
   render() {
-    const { currentIndex, currentColor } = this.state;
     return (
       <Fragment>
         <img src={src} alt="" />

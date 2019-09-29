@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch } from 'react-router';
-import { BrowserRouter, HashRouter, Link, NavLink } from 'react-router-dom';
+import { HashRouter, NavLink } from 'react-router-dom';
 
 import './index.css';
 
@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import Demo1 from './pages/Demo1';
 import Demo2 from './pages/Demo2';
 import Demo3 from './pages/Demo3-immutable';
+import Demo4 from './pages/Demo4/Demo4';
 
 import NotFound from './pages/NotFound';
 
@@ -22,6 +23,7 @@ export default class App extends Component {
           <NavLink to="/demo1" className="nav">demo1</NavLink>
           <NavLink to="/demo2" className="nav">demo2</NavLink>
           <NavLink to="/demo3" className="nav">demo3</NavLink>
+          <NavLink to="/demo4" className="nav">demo4</NavLink>
         </div>
 
         <Switch>
@@ -29,6 +31,7 @@ export default class App extends Component {
           <Route path="/demo1" component={Demo1} />
           <Route path="/demo2" component={Demo2} />
           <Route path="/demo3" component={Demo3} />
+          <Route path="/demo4" component={Demo4} />
           <Route component={NotFound} />
         </Switch>
 

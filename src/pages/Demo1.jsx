@@ -1,7 +1,6 @@
 import React from 'react';
 import request from '../utils/request';
 import styles from './Demo1.module.scss';
-import { log } from 'util';
 
 
 function randomColor() {

@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
-import { Map, List, toJS } from 'immutable'
+import { Map, List, toJS } from 'immutable' // eslint-disable-line
+import styles from './Demo3.module.scss'
 
 export class Demo3 extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  componentDidMount() {
+    
+  }
   
   render() {
     const data = Map({a : {m: 1, n: 2}});
@@ -13,7 +22,7 @@ export class Demo3 extends Component {
     console.log(result.toJS())
 
     return (
-      <div>DEMO3</div>
+      <div className={styles.demo3}>DEMO3</div>
     )
   }
 }
