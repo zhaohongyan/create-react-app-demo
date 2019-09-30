@@ -16,7 +16,11 @@ class Demo4 extends PureComponent {
     const total = store.getTotal;
     // store.setTotal(total)
     console.log('total', store.total);
+    setInterval(store.increment(), 1000) // 为什么没有生效？
 
+    // setInterval(() => {
+    //   console.log('test')
+    // }, 1000)
   }
 
   // 当接收新的 props 时并在 setState 调用后会触发此钩子
@@ -28,14 +32,14 @@ class Demo4 extends PureComponent {
     console.log('props', this.props)
     console.log('state', this.state)
     const { store = {} } = this.props;
-    const { title, id, showYou, myList, myObj, total } = store;
+    const { title, id, showYou, myList, myObj, total, tick } = store;
 
     return (
       <div>
         <h3>字符串：{title}</h3>
         <h3>数字：{id} {total}</h3>
         <h3>布尔值：{showYou ? 'is you ? ' : ''}</h3>
-
+        <h3>tick: {tick}</h3>
 
       </div>
     )

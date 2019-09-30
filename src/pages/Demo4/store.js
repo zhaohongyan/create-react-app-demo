@@ -1,5 +1,7 @@
 import { observable, computed, autorun, action, when, reaction } from "mobx";
 
+//  observable 映射、对象和数组 API: values() keys() entries() get() set() has() remove()
+
 class Demo4store {
 
   constructor() {
@@ -45,7 +47,15 @@ class Demo4store {
   //   this.total = total * 100;
   // }
 
+  
   total = this.price * this.amount;
+
+  @observable tick = 0
+  @action.bound
+  increment() {
+    console.log('increment+++++++')
+    this.tick++ 
+  }
 
 }
 
@@ -74,6 +84,7 @@ disposer()
 
 Demo4storeNew.todos.push({ title: 'kate', completed: false })
 
+// setInterval(Demo4storeNew.increment, 1000)
 
 export default Demo4storeNew;
 
