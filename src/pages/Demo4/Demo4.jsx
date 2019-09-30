@@ -1,22 +1,45 @@
 import React, { Component, PureComponent } from 'react'
 import { observer } from "mobx-react";
 
-import todoStore from './store';
+import Demo4store from './store';
 
 class Demo4 extends PureComponent {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      stateList: [1, 2, 3]
+    }
+  }
+
+  componentDidMount() {
+    const { store = {} } = this.props;
+    const total = store.getTotal;
+    // store.setTotal(total)
+    console.log('total', store.total);
+
+  }
+
+  // 当接收新的 props 时并在 setState 调用后会触发此钩子
+  componentWillReact() {
+    console.log("I will re-render");
   }
 
   render() {
     console.log('props', this.props)
+    console.log('state', this.state)
+    const { store = {} } = this.props;
+    const { title, id, showYou, myList, myObj, total } = store;
+
     return (
       <div>
-        demo4 {todoStore.id}
+        <h3>字符串：{title}</h3>
+        <h3>数字：{id} {total}</h3>
+        <h3>布尔值：{showYou ? 'is you ? ' : ''}</h3>
+
+
       </div>
     )
   }
 }
 
-export default observer(({ todoStore, ...rest }) => <Demo4 todoStore={todoStore} {...rest} />);
+export default observer(({ store, ...rest }) => <Demo4 store={Demo4store} {...rest} />);
